@@ -15,9 +15,11 @@
     "@types/react-dom": "18.0.11",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
+    "framer-motion": "^10.12.10",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "swiper": "^9.3.1",
     "typescript": "5.0.2"
   },
   "devDependencies": {

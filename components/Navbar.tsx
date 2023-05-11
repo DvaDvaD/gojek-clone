@@ -15,8 +15,10 @@ const Navbar = () => {
 
 		if (window.scrollY > prevScrollPos) {
 			navbarRef.current.classList.add("-translate-y-[100px]");
+			navbarRef.current.classList.add("opacity-0");
 		} else {
 			navbarRef.current.classList.remove("-translate-y-[100px]");
+			navbarRef.current.classList.remove("opacity-0");
 		}
 
 		setPrevScrollPos(window.scrollY);

@@ -9,6 +9,8 @@ import PromotionCarousel from "./PromotionCarousel";
 import JoinCard from "./JoinCard";
 import KerjaCarousel from "./KerjaCarousel";
 import { motion } from "framer-motion";
+import ServiceCarousel from "./ServiceCarousel";
+import WorldCarousel from "./WorldCarousel";
 
 const Main = () => {
 	return (
@@ -83,10 +85,10 @@ const Main = () => {
 			{/* Layanan */}
 			<section>
 				<motion.div
-					initial={{ opacity: 0, y: -50 }}
-					whileInView={{ opacity: 1, y: 0 }}
+					variants={headlineVariants}
+					initial="hidden"
+					whileInView="visible"
 					transition={{ duration: 0.7, ease: "easeOut" }}
-					viewport={{ margin: "-80px" }}
 				>
 					<h2 className="mt-32 text-center text-5xl font-[800]">
 						Kami membangun layanan <br /> untuk membantumu melewati halangan
@@ -95,7 +97,7 @@ const Main = () => {
 						Lihat semua layanan
 					</button>
 				</motion.div>
-				<div></div>
+				<ServiceCarousel />
 				<div className="mx-auto mt-20 flex max-w-[70rem] space-x-10">
 					<Image
 						className="w-[45%]"
@@ -117,10 +119,66 @@ const Main = () => {
 					</div>
 				</div>
 			</section>
+
+			{/* Perjalanan Kami */}
+			<section className="relative overflow-hidden rounded-t-[6rem] bg-[#4ac9e3] py-36">
+				<motion.div
+					className="mb-60"
+					variants={headlineVariants}
+					transition={{ duration: 0.7, ease: "easeOut" }}
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ margin: "-80px" }}
+				>
+					<h2 className="text-center text-5xl font-[800] leading-[60px] text-[#111111]">
+						Ikuti perjalanan <br /> kami dalam membuat <br /> dampak sosial!
+					</h2>
+					<button className="mx-auto mt-6 block rounded-full bg-gojek-green px-5 py-2 font-[500]">
+						Masuk Newsroom
+					</button>
+				</motion.div>
+				<WorldCarousel />
+			</section>
+
+			{/* Install Section */}
+			<section className="relative bg-[#182430]">
+				<Image
+					width={2000}
+					height={1000}
+					src="https://lelogama.go-jek.com/prime/upload/image/download-desktop.png"
+					alt=""
+				/>
+				<div className="absolute inset-y-0 left-32 flex flex-col justify-center">
+					<h3 className="text-5xl font-bold leading-[60px]">
+						Belum punya <br /> aplikasi Gojek? <br /> Yuk, unduh <br /> sekarang
+						juga.
+					</h3>
+					<div className="mt-4 flex space-x-8 text-black">
+						<button className="rounded-full bg-white py-2 px-6">
+							Play Store
+						</button>
+						<button className="rounded-full bg-white py-2 px-6">
+							App Store
+						</button>
+					</div>
+				</div>
+			</section>
 		</main>
 	);
 };
 export default Main;
+
+const headlineVariants = {
+	hidden: {
+		opacity: 0,
+		y: -50,
+	},
+	visible: {
+		opacity: 1,
+		y: 0,
+		transition: { duration: 0.7, ease: "easeOut" },
+	},
+};
 
 const detailCards = [
 	{

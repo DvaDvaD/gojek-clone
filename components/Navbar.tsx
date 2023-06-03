@@ -45,11 +45,11 @@ const Navbar = () => {
 					right: 0px;
 					margin: 0 auto;
 					background-color: currentColor;
+					transition: width 0.2s ease-out;
 				}
 
 				.underline-grow:hover::before {
 					width: 100%;
-					transition: width 0.2s ease-out;
 				}
 			`}</style>
 			<nav
